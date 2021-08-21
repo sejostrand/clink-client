@@ -1,0 +1,7 @@
+@use './colors.module.scss';
+
+.footerContainer {
+  display: flex;
+  background-color: colors.$backgroundColor;
+  padding: 0.5rem 2rem;
+}

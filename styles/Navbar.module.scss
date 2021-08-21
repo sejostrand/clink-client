@@ -1,0 +1,21 @@
+@use './colors.module.scss';
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: colors.$backgroundColor;
+  padding: 0.5rem 3rem;
+}
+
+.logoContainer {
+  display: flex;
+}
+
+.navMenu {
+  display: flex;
+}
+
+.navLink {
+  display: flex;
+  margin-left: 3rem;
+}

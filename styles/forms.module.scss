@@ -1,0 +1,23 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldLabel {
+  margin: 0.5rem 0;
+}
+
+.fieldInput {
+  padding: 2px;
+}
+
+.submitButton {
+  padding: 0.5rem 2rem;
+  margin: 0.5rem 0;
+}
