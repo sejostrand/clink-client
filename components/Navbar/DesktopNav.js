@@ -58,13 +58,14 @@ const DesktopNav = ({ isAuthenticated }) => {
 export default DesktopNav;
 
 export async function getStaticProps(context) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  let isAuthenticated;
   axios({
     method: 'get',
     url: 'http://localhost:1337/auth/local',
+    withCredentials: true,
   })
     .then((res) => {
-      setIsAuthenticated(true);
+      console.log(res);
     })
     .catch((error) => {
       console.log('An error occurred:', error);
