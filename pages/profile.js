@@ -21,21 +21,21 @@ const Profile = ({ userData }) => {
 
 export default Profile;
 
-export async function getStaticProps(context) {
-  const getUserData = () => {
-    let url = 'http://localhost:1337/users/me';
-    let response = axios
-      .get(url, { withCredentials: true })
-      .then((res) => res.data)
-      .catch((error) => console.log(error.response));
-    return response;
-  };
+// export async function getStaticProps(context) {
+//   const getUserData = () => {
+//     let url = 'http://localhost:1337/users/me';
+//     let response = axios
+//       .get(url, { withCredentials: true })
+//       .then((res) => res.data)
+//       .catch((error) => console.log(error.response));
+//     return response;
+//   };
 
-  const userData = (await getUserData()) || [];
+//   const userData = (await getUserData()) || [];
 
-  return {
-    props: {
-      userData,
-    },
-  };
-}
+//   return {
+//     props: {
+//       userData,
+//     },
+//   };
+// }

@@ -57,23 +57,23 @@ const DesktopNav = ({ isAuthenticated }) => {
 
 export default DesktopNav;
 
-export async function getStaticProps(context) {
-  let isAuthenticated;
-  axios({
-    method: 'get',
-    url: 'http://localhost:1337/auth/local',
-    withCredentials: true,
-  })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((error) => {
-      console.log('An error occurred:', error);
-    });
+// export async function getStaticProps(context) {
+//   let isAuthenticated;
+//   axios({
+//     method: 'get',
+//     url: 'http://localhost:1337/auth/local',
+//     withCredentials: true,
+//   })
+//     .then((res) => {
+//       console.log(res);
+//     })
+//     .catch((error) => {
+//       console.log('An error occurred:', error);
+//     });
 
-  return {
-    props: {
-      isAuthenticated,
-    },
-  };
-}
+//   return {
+//     props: {
+//       isAuthenticated,
+//     },
+//   };
+// }
