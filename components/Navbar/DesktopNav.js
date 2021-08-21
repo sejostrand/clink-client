@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import styles from '../../styles/Navbar.module.scss';
 // import { useCurrentUser, useDispatchCurrentUser } from '../../context/state';
