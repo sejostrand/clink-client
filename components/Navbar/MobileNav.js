@@ -4,8 +4,9 @@ import styles from '../../styles/Navbar.module.scss';
 // import { useCurrentUser, useDispatchCurrentUser } from '../../context/state';
 import axios from 'axios';
 
-const DesktopNav = ({ isAuthenticated }) => {
+const DesktopNav = () => {
   // const user = useCurrentUser();
+  const isAuthenticated = true;
 
   const logOut = () => {
     axios
