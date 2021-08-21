@@ -35,21 +35,31 @@ const Login = () => {
   };
 
   const testUser = () => {
-    // axios({
-    //   method: 'get',
-    //   url: 'http://localhost:1337/users/me',
-    // })
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((error) => {
-    //     console.log('An error occurred:', error);
-    //   });
+    axios({
+      method: 'get',
+      url: 'http://localhost:1337/users/me',
+      headers: {
+        Accept: 'application/json',
+        'content-type': 'application/json',
+      },
+      credentials: 'include',
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log('An error occurred:', error);
+      });
 
-    axios
-      .get('http://localhost:1337/users/me', { withCredentials: true })
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
+    // axios
+    //   .get('http://localhost:1337/users/me', {
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       Accept: 'application/json',
+    //     },
+    //   })
+    //   .then((res) => console.log(res.data))
+    //   .catch((err) => console.log(err));
 
     // fetch('http://localhost:1337/users/me', {
     //   headers: {
@@ -95,7 +105,7 @@ const Login = () => {
             Log in
           </button>
         </form>
-        <button onClick={testUser}>Test</button>
+        <button onClick={testUser}>Get user data</button>
       </div>
     </div>
   );
