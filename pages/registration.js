@@ -3,32 +3,29 @@ import styles from '../styles/Registration.module.scss';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 import { isValidPhoneNumber } from 'react-phone-number-input';
+import axios from 'axios';
 
 const Registration = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [mobile, setMobile] = useState('');
-  const [instagram, setInstagram] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
-  const [redirect, setRedirect] = useState(false);
+  // const [redirect, setRedirect] = useState(false);
 
-  useEffect(() => {
-    if (redirect == true) {
-      window.location.assign('/login');
-    }
-  }, [redirect]);
+  // useEffect(() => {
+  //   if (redirect == true) {
+  //     window.location.assign('/login');
+  //   }
+  // }, [redirect]);
 
   const checkDetails = () => {
     if (
       password == password2 &&
       password.length >= 8 &&
-      isValidPhoneNumber(mobile) &&
       firstName != '' &&
       lastName != '' &&
-      email != '' &&
-      instagram != ''
+      email != ''
     ) {
       return false;
     } else {
@@ -37,25 +34,22 @@ const Registration = () => {
   };
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    // axios
-    //   .post('http://localhost:1337/auth/local/register', {
-    //     firstName: firstName,
-    //     lastName: lastName,
-    //     username: email,
-    //     email: email,
-    //     mobileNumber: mobile,
-    //     password: password,
-    //     instagramAccount: instagram,
-    //   })
-    //   .then((response) => {
-    //     console.log('Successful registration');
-    //     window.localStorage.setItem('userToken', response.data.jwt);
-    //     setRedirect(true);
-    //   })
-    //   .catch((error) => {
-    //     console.log('An error occurred:', error.response);
-    //   });
+    e.preventDefault();
+    axios
+      .post('http://localhost:1337/auth/local/register', {
+        firstName: firstName,
+        lastName: lastName,
+        username: email,
+        email: email,
+        password: password,
+      })
+      .then((response) => {
+        console.log('Successful registration');
+        // setRedirect(true);
+      })
+      .catch((error) => {
+        console.log('An error occurred:', error.response);
+      });
   };
 
   return (
@@ -95,24 +89,6 @@ const Registration = () => {
               placeholder='Enter email'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-            ></input>
-          </div>
-          <div className={styles.field}>
-            <label className={styles.fieldLabel}>Mobile Number</label>
-            <PhoneInput
-              placeholder='Enter phone number'
-              value={mobile}
-              onChange={setMobile}
-            />
-          </div>
-          <div className={styles.field}>
-            <label className={styles.fieldLabel}>Instagram</label>
-            <input
-              className={styles.fieldInput}
-              type='text'
-              placeholder='Your instagram username'
-              value={instagram}
-              onChange={(e) => setInstagram(e.target.value)}
             ></input>
           </div>
           <div className={styles.field}>
