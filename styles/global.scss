@@ -1,0 +1,16 @@
+@use './theme.module.scss';
+
+* {
+  box-sizing: border-box;
+  font-family: theme.$font-main;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}

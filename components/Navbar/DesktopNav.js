@@ -2,27 +2,16 @@ import React from 'react';
 import Link from 'next/link';
 import styles from '../../styles/Navbar.module.scss';
 // import { useCurrentUser, useDispatchCurrentUser } from '../../context/state';
-import axios from 'axios';
+import handleLogOut from '../../utils/api/handleLogOut';
 
 const DesktopNav = () => {
   // const user = useCurrentUser();
   const isAuthenticated = true;
 
-  const logOut = () => {
-    axios
-      .post('http://localhost:1337/logout')
-      .then((res) => {
-        console.log('User logged out.');
-      })
-      .catch((error) => {
-        console.log('Unable to logout', error.response);
-      });
-  };
-
   return (
     <div className={styles.navContainer}>
       <div className={styles.logoContainer}>
-        <Link href='/'>InfluenceLogo</Link>
+        <Link href='/'>Clink</Link>
       </div>
       <nav className={styles.navMenu}>
         {isAuthenticated && (
@@ -36,7 +25,7 @@ const DesktopNav = () => {
           </span>
         )}
         {isAuthenticated && (
-          <span onClick={() => logOut()} className={styles.navLink}>
+          <span onClick={handleLogOut} className={styles.navLink}>
             <Link href='/'>Log out</Link>
           </span>
         )}

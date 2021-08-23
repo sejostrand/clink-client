@@ -1,7 +1,7 @@
-@use './colors.module.scss';
+@use './theme.module.scss';
 
 .footerContainer {
   display: flex;
-  background-color: colors.$backgroundColor;
+  background-color: theme.$dark;
   padding: 0.5rem 2rem;
 }

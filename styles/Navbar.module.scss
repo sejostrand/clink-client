@@ -1,10 +1,11 @@
-@use './colors.module.scss';
+@use './theme.module.scss';
 
 .navContainer {
   display: flex;
   justify-content: space-between;
-  background-color: colors.$backgroundColor;
+  background-color: theme.$light;
   padding: 0.5rem 3rem;
+  font-family: theme.$font-main;
 }
 
 .logoContainer {

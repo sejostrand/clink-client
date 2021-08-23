@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../styles/Profile.module.scss';
 // import { useCurrentUser, useDispatchCurrentUser } from '../context/state';
+import getUser from '../utils/api/getUser';
 
 const Profile = () => {
   const userData = {
@@ -32,12 +33,12 @@ const Profile = () => {
   return (
     <div className={styles.pageContainer}>
       <div className={styles.pageContent}>
-        <button onClick={() => console.log(userData)}>Click me</button>
         <div>
           <div>{userData.firstName + ' ' + userData.lastName}</div>
           <div>{userData.email}</div>
           <div>{userData.mobileNumber}</div>
           <div>{userData.instagramAccount}</div>
+          <button onClick={getUser}>getUser</button>
         </div>
       </div>
     </div>
@@ -47,20 +48,18 @@ const Profile = () => {
 export default Profile;
 
 // export async function getStaticProps(context) {
-//   const getUserData = () => {
-//     let url = 'http://localhost:1337/users/me';
-//     let response = axios
-//       .get(url, { withCredentials: true })
-//       .then((res) => res.data)
-//       .catch((error) => console.log(error.response));
-//     return response;
-//   };
-
-//   const userData = (await getUserData()) || [];
-
-//   return {
-//     props: {
-//       userData,
-//     },
-//   };
+// const getUserData = () => {
+//   let url = 'http://localhost:1337/users/me';
+//   let response = axios
+//     .get(url, { withCredentials: true })
+//     .then((res) => res.data)
+//     .catch((error) => console.log(error.response));
+//   return response;
+// };
+// const userData = (await getUserData()) || [];
+// return {
+//   props: {
+//     userData,
+//   },
+// };
 // }
