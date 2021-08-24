@@ -3,13 +3,20 @@
 .navContainer {
   display: flex;
   justify-content: space-between;
-  background-color: theme.$light;
+  align-items: center;
+  background-color: theme.$primary;
   padding: 0.5rem 3rem;
   font-family: theme.$font-main;
 }
 
 .logoContainer {
   display: flex;
+  color: white;
+  font-size: theme.$largeFont;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin: 0.2rem 0;
+  cursor: pointer;
 }
 
 .navMenu {
@@ -18,5 +25,14 @@
 
 .navLink {
   display: flex;
-  margin-left: 3rem;
+  margin-left: 2rem;
+  color: white;
+  padding: 0.5rem 1rem 0.3rem 1rem;
+  border-radius: theme.$rounded;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+    color: theme.$primary;
+  }
 }

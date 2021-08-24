@@ -11,13 +11,6 @@ const Registration = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
-  // const [redirect, setRedirect] = useState(false);
-
-  // useEffect(() => {
-  //   if (redirect == true) {
-  //     window.location.assign('/login');
-  //   }
-  // }, [redirect]);
 
   const checkDetails = () => {
     if (

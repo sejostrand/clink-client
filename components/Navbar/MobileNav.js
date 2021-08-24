@@ -21,37 +21,11 @@ const DesktopNav = () => {
 
   return (
     <div className={styles.navContainer}>
-      <div className={styles.logoContainer}>
-        <Link href='/'>InfluenceLogo</Link>
-      </div>
-      <nav className={styles.navMenu}>
-        {!isAuthenticated && (
-          <span className={styles.navLink}>
-            <Link href='/registration'>Sign up</Link>
-          </span>
-        )}
-        {!isAuthenticated && (
-          <span className={styles.navLink}>
-            <Link href='/login'>Log in</Link>
-          </span>
-        )}
-        {isAuthenticated && (
-          <span onClick={() => logOut()} className={styles.navLink}>
-            <Link href='/'>Log out</Link>
-          </span>
-        )}
-        {isAuthenticated && (
-          <span className={styles.navLink}>
-            <Link href='/profile'>Profile</Link>
-          </span>
-        )}
-        <span className={styles.navLink}>
-          <Link href='/browse'>Browse</Link>
-        </span>
-        <span className={styles.navLink}>
-          <Link href='/'>Home</Link>
-        </span>
-      </nav>
+      <Link href='/'>
+        <div className={styles.logoContainer}>Clink</div>
+      </Link>
+
+      <nav className={styles.navMenu}></nav>
     </div>
   );
 };

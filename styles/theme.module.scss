@@ -3,9 +3,17 @@
   src: url('fonts/Comfortaa.ttf') format('truetype');
 }
 
+//font
 $font-main: 'Comfortaa', sans-serif;
+$smallFont: 1rem;
+$mediumFont: 1.2rem;
+$largeFont: 1.5rem;
 
-$primary: #286090;
+//colors
+$primary: #3214bb;
 $secondary: #ff715b;
 $dark: #1c1c1c;
 $light: #ffffff;
+
+//border
+$rounded: 0.5rem;

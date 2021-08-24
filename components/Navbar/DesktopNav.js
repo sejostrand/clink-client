@@ -10,36 +10,46 @@ const DesktopNav = () => {
 
   return (
     <div className={styles.navContainer}>
-      <div className={styles.logoContainer}>
-        <Link href='/'>Clink</Link>
-      </div>
+      <Link href='/'>
+        <div className={styles.logoContainer}>Clink</div>
+      </Link>
+
       <nav className={styles.navMenu}>
         {isAuthenticated && (
-          <span className={styles.navLink}>
-            <Link href='/registration'>Sign up</Link>
-          </span>
+          <Link href='/registration'>
+            <span className={styles.navLink}>Sign up</span>
+          </Link>
         )}
         {isAuthenticated && (
-          <span className={styles.navLink}>
-            <Link href='/login'>Log in</Link>
-          </span>
+          <Link href='/login'>
+            <span className={styles.navLink}>Log in</span>
+          </Link>
         )}
         {isAuthenticated && (
-          <span onClick={handleLogOut} className={styles.navLink}>
-            <Link href='/'>Log out</Link>
-          </span>
+          <Link href='/'>
+            <span onClick={handleLogOut} className={styles.navLink}>
+              Log out
+            </span>
+          </Link>
         )}
         {isAuthenticated && (
-          <span className={styles.navLink}>
-            <Link href='/profile'>Profile</Link>
-          </span>
+          <Link href='/profile'>
+            <span className={styles.navLink}>Profile</span>
+          </Link>
         )}
-        <span className={styles.navLink}>
-          <Link href='/browse'>Browse</Link>
-        </span>
-        <span className={styles.navLink}>
-          <Link href='/'>Home</Link>
-        </span>
+        {isAuthenticated && (
+          <Link href='/account'>
+            <span className={styles.navLink}>Account</span>
+          </Link>
+        )}
+
+        <Link href='/browse'>
+          <span className={styles.navLink}>Browse</span>
+        </Link>
+
+        <Link href='/'>
+          <span className={styles.navLink}>Home</span>
+        </Link>
       </nav>
     </div>
   );
