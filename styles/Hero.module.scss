@@ -20,8 +20,9 @@
 
 .container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
+  overflow: hidden;
 }
 
 .heroContainer {
@@ -46,4 +47,5 @@
 }
 .heroSubTitle {
   font-size: 32px;
+  margin: 4px 0;
 }

@@ -9,6 +9,14 @@ const DesktopNav = (props) => {
   const currentUser = useAppContext();
   const [refresh, setRefresh] = useState(false);
 
+  useEffect(() => {
+    const nav = document.getElementById('nav');
+    const handleScroll = () => {
+      nav.style.backgroundColor = 'rgba(54, 54, 54, 0.9)';
+    };
+    document.addEventListener('scroll', handleScroll());
+  });
+
   const handleLogOut = () => {
     cookieCutter.set('token', '', { expires: new Date(0) });
     currentUser.isAuthenticated = false;
@@ -16,7 +24,7 @@ const DesktopNav = (props) => {
   };
 
   return (
-    <div className={styles.navContainer}>
+    <div className={styles.navContainer} id='nav'>
       <Link href='/'>
         <div className={styles.logoContainer}>Clink</div>
       </Link>
