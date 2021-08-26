@@ -11,10 +11,17 @@ const DesktopNav = (props) => {
 
   useEffect(() => {
     const nav = document.getElementById('nav');
-    const handleScroll = () => {
-      nav.style.backgroundColor = 'rgba(54, 54, 54, 0.9)';
+    window.onscroll = () => {
+      let currentScrollPos = window.pageYOffset;
+      console.log(currentScrollPos);
+      if (currentScrollPos == 0) {
+        nav.style.backgroundColor = 'white';
+        nav.style.color = 'black';
+      } else {
+        nav.style.backgroundColor = 'rgba(20, 20, 20, 0.555)';
+        nav.style.color = 'white';
+      }
     };
-    document.addEventListener('scroll', handleScroll());
   });
 
   const handleLogOut = () => {

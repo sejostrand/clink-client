@@ -6,3 +6,11 @@
   width: 100%;
   align-items: center;
 }
+
+.container {
+  display: flex;
+  background-color: theme.$light;
+  min-height: 50vh;
+  width: 80%;
+  border-radius: 5rem;
+}

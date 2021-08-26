@@ -7,15 +7,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(54, 54, 54, 0.9);
+  background-color: theme.$light;
   backdrop-filter: blur(5px);
   padding: 0.5rem 3rem;
   font-family: theme.$font-main;
+  transition: all 300ms ease-in-out;
 }
 
 .logoContainer {
   display: flex;
-  color: white;
+  color: inherit;
   font-size: theme.$largeFont;
   font-weight: bold;
   letter-spacing: 3px;
@@ -30,7 +31,7 @@
 .navLink {
   display: flex;
   margin-left: 2rem;
-  color: white;
+  color: inherit;
   padding: 0.5rem 1rem 0.3rem 1rem;
   border-radius: theme.$rounded;
   cursor: pointer;

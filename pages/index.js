@@ -16,6 +16,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <Hero />
+      <div className={styles.container}></div>
     </div>
   );
 }
