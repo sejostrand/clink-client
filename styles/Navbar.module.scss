@@ -20,6 +20,7 @@
   backdrop-filter: blur(5px);
   font-family: theme.$font-main;
   transition: all 300ms ease-in-out;
+  z-index: 100;
 }
 
 .logoContainer {
@@ -104,4 +105,14 @@
   &:active {
     transform: scale(0.95) translateY(4px);
   }
+}
+
+.gradientBar {
+  position: absolute;
+  top: 0;
+  height: 5px;
+  width: 100%;
+  background: -webkit-linear-gradient(135deg, #4d30d6, #c32e72, #f8db65);
+  background-size: 200%;
+  animation: gradient 10s infinite;
 }

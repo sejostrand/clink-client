@@ -9,7 +9,7 @@ const Browse = ({ allProfiles }) => {
   return (
     <div className={styles.pageContainer}>
       <Navbar />
-      <div>
+      <div className={styles.container}>
         {allProfiles.map((profile) => {
           return <ProfileTile key={profile.id} data={profile} />;
         })}
