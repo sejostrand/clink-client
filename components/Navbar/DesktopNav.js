@@ -4,10 +4,11 @@ import styles from '../../styles/Navbar.module.scss';
 // import { useCurrentUser, useDispatchCurrentUser } from '../../context/state';
 import { useAppContext } from '../../utils/context/state';
 import cookieCutter from 'cookie-cutter';
+import { CgMenu } from 'react-icons/cg';
 
 const DesktopNav = (props) => {
   const currentUser = useAppContext();
-  const [refresh, setRefresh] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const nav = document.getElementById('nav');
@@ -17,7 +18,7 @@ const DesktopNav = (props) => {
         nav.style.backgroundColor = 'white';
         nav.style.color = 'black';
       } else {
-        nav.style.backgroundColor = 'rgba(20, 20, 20, 0.555)';
+        nav.style.backgroundColor = 'rgba(20, 20, 20, 0.7)';
         nav.style.color = 'white';
       }
     };
@@ -38,40 +39,40 @@ const DesktopNav = (props) => {
       <nav className={styles.navMenu}>
         {!currentUser.isAuthenticated && (
           <Link href='/registration'>
-            <span className={styles.navLink}>Sign up</span>
+            <span className={styles.navLink}>SignUp</span>
           </Link>
         )}
         {!currentUser.isAuthenticated && (
           <Link href='/login'>
-            <span className={styles.navLink}>Log in</span>
+            <span className={styles.navLink}>LogIn</span>
           </Link>
         )}
-        {currentUser.isAuthenticated && (
-          <Link href='/'>
-            <span onClick={handleLogOut} className={styles.navLink}>
-              Log out
-            </span>
-          </Link>
-        )}
-        {currentUser.isAuthenticated && (
-          <Link href='/profile'>
-            <span className={styles.navLink}>Profile</span>
-          </Link>
-        )}
-        {currentUser.isAuthenticated && (
-          <Link href='/account'>
-            <span className={styles.navLink}>Account</span>
-          </Link>
-        )}
-
         <Link href='/browse'>
           <span className={styles.navLink}>Browse</span>
         </Link>
-
-        <Link href='/'>
-          <span className={styles.navLink}>Home</span>
-        </Link>
       </nav>
+      {currentUser.isAuthenticated && (
+        <>
+          <span onClick={() => setIsOpen(!isOpen)} className={styles.menuIcon}>
+            <CgMenu />
+          </span>
+          {isOpen && (
+            <div className={styles.dropDownContainer}>
+              <Link href='/account'>
+                <span className={styles.dropDownLink}>Account</span>
+              </Link>
+              <Link href='/profile'>
+                <span className={styles.dropDownLink}>Profile</span>
+              </Link>
+              <Link href='/'>
+                <span onClick={handleLogOut} className={styles.dropDownLink}>
+                  LogOut
+                </span>
+              </Link>
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 };

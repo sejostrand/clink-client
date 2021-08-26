@@ -1,16 +1,10 @@
 @use './theme.module.scss';
-
-.pageContainer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-}
+@import './pageStyles.module.scss';
 
 .container {
   display: flex;
   background-color: theme.$light;
   min-height: 50vh;
-  width: 80%;
+  width: 100%;
   border-radius: 5rem;
 }

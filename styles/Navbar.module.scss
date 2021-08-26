@@ -1,26 +1,39 @@
 @use './theme.module.scss';
 
+@keyframes grow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 .navContainer {
   position: sticky;
   top: 0.5rem;
-  border-radius: 16px;
+  border-radius: theme.$rounded;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(5px);
-  padding: 0 3rem;
   font-family: theme.$font-main;
   transition: all 300ms ease-in-out;
 }
 
 .logoContainer {
   display: flex;
+  width: 100%;
   color: white;
   font-size: theme.$largeFont;
   font-weight: bold;
   letter-spacing: 3px;
-  margin: 1rem 16rem 1rem 1rem;
+  margin: 1rem 0 1rem 3rem;
   cursor: pointer;
+  @media (max-width: 340px) {
+    margin: 1rem 0 1rem 2rem;
+  }
 }
 
 .navMenu {
@@ -29,7 +42,8 @@
 
 .navLink {
   display: flex;
-  margin-left: 2rem;
+  flex-wrap: nowrap;
+  margin: 0 1rem;
   color: inherit;
   padding: 0.5rem 1rem 0.3rem 1rem;
   border-radius: theme.$rounded;
@@ -38,5 +52,56 @@
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  @media (max-width: 340px) {
+    margin: 0 1rem 0 0;
+  }
+}
+
+.dropDownContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  right: 0;
+  margin-top: 14rem;
+  background-color: theme.$dark;
+  padding: 1rem;
+  color: white;
+  border-radius: theme.$rounded;
+  backdrop-filter: blur(5px);
+  animation: grow 80ms ease-in-out;
+}
+
+.dropDownLink {
+  display: flex;
+  margin: 0.3rem 0;
+  color: inherit;
+  padding: 0.5rem 1rem 0.3rem 1rem;
+  border-radius: theme.$rounded;
+  cursor: pointer;
+  transition: all 100ms ease-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.menuIcon {
+  margin-right: 2rem;
+  font-size: 2.2rem;
+  transform: translateY(4px);
+  color: inherit;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  transition: transform 20ms;
+
+  &:active {
+    transform: scale(0.95) translateY(4px);
   }
 }
