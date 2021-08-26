@@ -62,7 +62,7 @@ const DesktopNav = (props) => {
                 <span className={styles.dropDownLink}>Account</span>
               </Link>
               <Link href='/profile'>
-                <span className={styles.dropDownLink}>Profile</span>
+                <span className={styles.dropDownLink}>MyProfile</span>
               </Link>
               <Link href='/'>
                 <span onClick={handleLogOut} className={styles.dropDownLink}>

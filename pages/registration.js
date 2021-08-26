@@ -49,7 +49,7 @@ const Registration = () => {
   return (
     <div className={styles.pageContainer}>
       <Navbar />
-      <div className={styles.pageContainer}>
+      <div className={styles.section}>
         <div className={styles.contentContainer}>
           <form
             className={styles.formContainer}
@@ -117,7 +117,7 @@ const Registration = () => {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

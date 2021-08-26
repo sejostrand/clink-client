@@ -10,9 +10,24 @@ const Browse = ({ allProfiles }) => {
     <div className={styles.pageContainer}>
       <Navbar />
       <div className={styles.container}>
-        {allProfiles.map((profile) => {
-          return <ProfileTile key={profile.id} data={profile} />;
-        })}
+        <div className={styles.jar}>
+          {allProfiles.map((profile) => {
+            return (
+              <>
+                <ProfileTile key={profile.id} data={profile} />
+                <ProfileTile key={profile.id} data={profile} />
+                <ProfileTile key={profile.id} data={profile} />
+                <ProfileTile key={profile.id} data={profile} />
+                <ProfileTile key={profile.id} data={profile} />
+                <ProfileTile key={profile.id} data={profile} />
+                <ProfileTile key={profile.id} data={profile} />
+                <ProfileTile key={profile.id} data={profile} />
+                <ProfileTile key={profile.id} data={profile} />
+                <ProfileTile key={profile.id} data={profile} />
+              </>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

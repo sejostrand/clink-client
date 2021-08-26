@@ -2,5 +2,15 @@
 @import './pageStyles.module.scss';
 
 .container {
+  display: flex;
   margin-top: 10rem;
+  width: 100%;
+  flex-direction: row;
+}
+
+.jar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 3rem;
 }

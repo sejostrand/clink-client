@@ -1,6 +1,18 @@
 @use './theme.module.scss';
 @import './pageStyles.module.scss';
 
+@keyframes gradient {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: top left;
+  }
+}
+
 .container {
   display: flex;
   background-color: theme.$light;
@@ -14,7 +26,7 @@
   top: 0;
   height: 5px;
   width: 100%;
-  background: -webkit-linear-gradient(135deg, #4d30d6, #c32e72, #f8db65);
+  background: -webkit-linear-gradient(0deg, #4d30d6, #c32e72, #f8db65);
   background-size: 200%;
   animation: gradient 10s infinite;
 }

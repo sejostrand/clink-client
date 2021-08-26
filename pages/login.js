@@ -9,9 +9,9 @@ const Login = () => {
 
   return (
     <>
-      <Navbar />
       <div className={styles.pageContainer}>
-        <div className={styles.pageContent}>
+        <Navbar />
+        <div className={styles.section}>
           <form
             className={styles.formContainer}
             // action={'/profile'}
