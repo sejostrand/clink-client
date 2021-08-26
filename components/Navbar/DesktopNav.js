@@ -12,6 +12,7 @@ const DesktopNav = (props) => {
 
   useEffect(() => {
     const nav = document.getElementById('nav');
+    let prevScrollpos = window.pageYOffset;
     window.onscroll = () => {
       let currentScrollPos = window.pageYOffset;
       if (currentScrollPos == 0) {
@@ -20,6 +21,14 @@ const DesktopNav = (props) => {
       } else {
         nav.style.backgroundColor = 'rgba(20, 20, 20, 0.7)';
         nav.style.color = 'white';
+
+        //hide nav
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById('nav').style.top = '0.5rem';
+        } else {
+          document.getElementById('nav').style.top = '-4rem';
+        }
+        prevScrollpos = currentScrollPos;
       }
     };
   });
