@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../../styles/Navbar.module.scss';
 // import { useCurrentUser, useDispatchCurrentUser } from '../../context/state';
-import handleLogOut from '../../utils/api/handleLogOut';
+import { useAppContext } from '../../utils/context/state';
+import cookieCutter from 'cookie-cutter';
 
-const DesktopNav = () => {
-  // const user = useCurrentUser();
-  const isAuthenticated = true;
+const DesktopNav = (props) => {
+  const currentUser = useAppContext();
+  const [refresh, setRefresh] = useState(false);
+
+  const handleLogOut = () => {
+    cookieCutter.set('token', '', { expires: new Date(0) });
+    currentUser.isAuthenticated = false;
+    window.location.reload();
+  };
 
   return (
     <div className={styles.navContainer}>
@@ -15,29 +22,29 @@ const DesktopNav = () => {
       </Link>
 
       <nav className={styles.navMenu}>
-        {isAuthenticated && (
+        {!currentUser.isAuthenticated && (
           <Link href='/registration'>
             <span className={styles.navLink}>Sign up</span>
           </Link>
         )}
-        {isAuthenticated && (
+        {!currentUser.isAuthenticated && (
           <Link href='/login'>
             <span className={styles.navLink}>Log in</span>
           </Link>
         )}
-        {isAuthenticated && (
+        {currentUser.isAuthenticated && (
           <Link href='/'>
             <span onClick={handleLogOut} className={styles.navLink}>
               Log out
             </span>
           </Link>
         )}
-        {isAuthenticated && (
+        {currentUser.isAuthenticated && (
           <Link href='/profile'>
             <span className={styles.navLink}>Profile</span>
           </Link>
         )}
-        {isAuthenticated && (
+        {currentUser.isAuthenticated && (
           <Link href='/account'>
             <span className={styles.navLink}>Account</span>
           </Link>

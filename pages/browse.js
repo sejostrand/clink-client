@@ -1,15 +1,19 @@
 import React from 'react';
 import getAllProfiles from '../utils/api/getAllProfiles';
 import ProfileTile from '../components/ProfileTile/ProfileTile';
+import Navbar from '../components/Navbar/Navbar';
 
 const Browse = ({ allProfiles }) => {
   console.log(allProfiles);
   return (
-    <div>
-      {allProfiles.map((profile) => {
-        return <ProfileTile key={profile.id} data={profile} />;
-      })}
-    </div>
+    <>
+      <Navbar />
+      <div>
+        {allProfiles.map((profile) => {
+          return <ProfileTile key={profile.id} data={profile} />;
+        })}
+      </div>
+    </>
   );
 };
 

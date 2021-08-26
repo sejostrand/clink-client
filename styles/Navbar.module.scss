@@ -7,15 +7,16 @@
   background-color: theme.$primary;
   padding: 0.5rem 3rem;
   font-family: theme.$font-main;
+  opacity: 0.5;
 }
 
 .logoContainer {
   display: flex;
-  color: white;
+  color: black;
   font-size: theme.$largeFont;
   font-weight: bold;
   letter-spacing: 3px;
-  margin: 0.2rem 0;
+  margin: 1rem 0;
   cursor: pointer;
 }
 

@@ -15,6 +15,7 @@ const handleLogin = (e, email, password) => {
       console.log('User profile', res.data);
       cookieCutter.set('token', res.data.jwt);
       cookieCutter.set('userId', res.data.user.id);
+      window.location.assign('/');
     })
     .catch((error) => {
       console.log('An error occurred:', error);

@@ -4,6 +4,7 @@ import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 import { isValidPhoneNumber } from 'react-phone-number-input';
 import axios from 'axios';
+import Navbar from '../components/Navbar/Navbar';
 
 const Registration = () => {
   const [firstName, setFirstName] = useState('');
@@ -46,74 +47,77 @@ const Registration = () => {
   };
 
   return (
-    <main className={styles.pageContainer}>
-      <div className={styles.contentContainer}>
-        <form
-          className={styles.formContainer}
-          action={'/profile'}
-          method={'POST'}
-          onSubmit={handleSubmit}
-        >
-          <div className={styles.field}>
-            <label className={styles.fieldLabel}>First name</label>
-            <input
-              className={styles.fieldInput}
-              type='text'
-              placeholder='Your name'
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            ></input>
-          </div>
-          <div className={styles.field}>
-            <label className={styles.fieldLabel}>Last name</label>
-            <input
-              className={styles.fieldInput}
-              type='text'
-              placeholder='Your last name'
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            ></input>
-          </div>
-          <div className={styles.field}>
-            <label className={styles.fieldLabel}>Email</label>
-            <input
-              className={styles.fieldInput}
-              type='email'
-              placeholder='Enter email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            ></input>
-          </div>
-          <div className={styles.field}>
-            <label className={styles.fieldLabel}>Password</label>
-            <input
-              className={styles.fieldInput}
-              type='password'
-              placeholder='Enter password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            ></input>
-          </div>
-          <div className={styles.field}>
-            <label className={styles.fieldLabel}>Confirm Password</label>
-            <input
-              className={styles.fieldInput}
-              type='password'
-              placeholder='Confirm password'
-              value={password2}
-              onChange={(e) => setPassword2(e.target.value)}
-            ></input>
-          </div>
-          <button
-            className={styles.submitButton}
-            type='submit'
-            disabled={checkDetails()}
+    <>
+      <Navbar />
+      <main className={styles.pageContainer}>
+        <div className={styles.contentContainer}>
+          <form
+            className={styles.formContainer}
+            action={'/profile'}
+            method={'POST'}
+            onSubmit={handleSubmit}
           >
-            Submit
-          </button>
-        </form>
-      </div>
-    </main>
+            <div className={styles.field}>
+              <label className={styles.fieldLabel}>First name</label>
+              <input
+                className={styles.fieldInput}
+                type='text'
+                placeholder='Your name'
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              ></input>
+            </div>
+            <div className={styles.field}>
+              <label className={styles.fieldLabel}>Last name</label>
+              <input
+                className={styles.fieldInput}
+                type='text'
+                placeholder='Your last name'
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              ></input>
+            </div>
+            <div className={styles.field}>
+              <label className={styles.fieldLabel}>Email</label>
+              <input
+                className={styles.fieldInput}
+                type='email'
+                placeholder='Enter email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              ></input>
+            </div>
+            <div className={styles.field}>
+              <label className={styles.fieldLabel}>Password</label>
+              <input
+                className={styles.fieldInput}
+                type='password'
+                placeholder='Enter password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              ></input>
+            </div>
+            <div className={styles.field}>
+              <label className={styles.fieldLabel}>Confirm Password</label>
+              <input
+                className={styles.fieldInput}
+                type='password'
+                placeholder='Confirm password'
+                value={password2}
+                onChange={(e) => setPassword2(e.target.value)}
+              ></input>
+            </div>
+            <button
+              className={styles.submitButton}
+              type='submit'
+              disabled={checkDetails()}
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </main>
+    </>
   );
 };
 
