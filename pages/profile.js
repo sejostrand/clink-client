@@ -10,14 +10,12 @@ const Profile = ({ currentUser }) => {
   const user = useAppContext();
   console.log(user);
   return (
-    <>
+    <div className={styles.pageContainer}>
       <Navbar />
-      <div className={styles.pageContainer}>
-        <div className={styles.pageContent}>
-          <div></div>
-        </div>
+      <div className={styles.pageContent}>
+        <div></div>
       </div>
-    </>
+    </div>
   );
 };
 
