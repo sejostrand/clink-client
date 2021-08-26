@@ -13,7 +13,6 @@ const DesktopNav = (props) => {
     const nav = document.getElementById('nav');
     window.onscroll = () => {
       let currentScrollPos = window.pageYOffset;
-      console.log(currentScrollPos);
       if (currentScrollPos == 0) {
         nav.style.backgroundColor = 'white';
         nav.style.color = 'black';
