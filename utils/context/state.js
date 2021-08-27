@@ -7,6 +7,7 @@ const AppContext = createContext();
 export function AppWrapper({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userData, setUserData] = useState([]);
+  const [profileData, setProfileData] = useState([]);
 
   useEffect(() => {
     if (cookieCutter.get('token') != undefined) {
@@ -27,6 +28,7 @@ export function AppWrapper({ children }) {
   let state = {
     isAuthenticated: isAuthenticated,
     userData: userData,
+    profileData: profileData,
   };
 
   return <AppContext.Provider value={state}>{children}</AppContext.Provider>;

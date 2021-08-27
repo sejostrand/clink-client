@@ -13,14 +13,6 @@
   }
 }
 
-.container {
-  display: flex;
-  background-color: theme.$light;
-  min-height: 50vh;
-  width: 100%;
-  border-radius: 5rem;
-}
-
 .gradientBar {
   position: absolute;
   top: 0;
@@ -29,4 +21,19 @@
   background: -webkit-linear-gradient(0deg, #4d30d6, #c32e72, #f8db65);
   background-size: 200%;
   animation: gradient 10s infinite;
+}
+
+.networkContainer {
+  position: absolute;
+  width: 80vw;
+  z-index: 0;
+  left: -15%;
+  overflow: hidden;
+  max-height: 90%;
+  top: 36rem;
+}
+
+.network {
+  width: 100%;
+  z-index: 0;
 }
